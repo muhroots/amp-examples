@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "name": "Meat Stuffed Potato",
+      "cover": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg"
+    }, {
+      "name": "Dumplings Around Asia",
+      "cover": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg"
+    }, {
+      "name": "Mini Power Pork Patt",
+      "cover": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg"
+    }
+  ]
+}
