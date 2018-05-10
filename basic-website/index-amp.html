@@ -8,7 +8,8 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+    <script async custom-element="amp-fx-flying-carpet" src="https://cdn.ampproject.org/v0/amp-fx-flying-carpet-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <style amp-custom>
       *, *:before, *:after {
         box-sizing: border-box;
@@ -24,15 +25,28 @@
       }
 
       main {
-        margin-top: 20px;
+        margin-top: 24px;
       }
 
       section {
-        padding: 80px 0 40px;
+        padding: 32px 0;
+      }
+
+      section:nth-child(1) {
+        padding-top: 72px;
       }
 
       section:nth-child(2) {
         background-color: #FAFAFA;
+      }
+
+      footer {
+        min-height: 200px;
+        background-color: #222;
+      }
+
+      .relative {
+        position: relative;
       }
 
       .container {
@@ -94,8 +108,17 @@
       .recipe__item {
         flex-basis: 50%;
         max-width: 50%;
-        padding-right: .5rem;
-        padding-left: .5rem;
+        padding: 1rem .5rem ;
+      }
+
+      .recipe__item h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .recipe__item span {
+        font-style: italic;
+        color: #6A6A6A;
       }
 
       .recipe__image {
@@ -134,33 +157,92 @@
           
           <div class="recipe"> 
             <div class="recipe__item">
-              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <amp-carousel type="slides" layout="responsive" width="300" height="300">
+                <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+                <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              </amp-carousel>
               <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span>  
             </div>
             
             <div class="recipe__item">
               <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
               <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
             </div>
 
             <div class="recipe__item">
               <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
               <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
             </div>
 
             <div class="recipe__item">
               <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
               <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="container">
+      <!-- <amp-fx-flying-carpet height="100">
+        <amp-img src="/assets/img/cover.jpg" width="800" height="800" alt="an image" layout="responsive"></amp-img>
+      </amp-fx-flying-carpet> -->
 
+      <section>
+        <div class="container">         
+          <div class="recipe"> 
+            <div class="recipe__item">
+              <amp-carousel type="slides" layout="responsive" width="300" height="300">
+                <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+                <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              </amp-carousel>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+            
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg?" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- <div class="recipe__share">
+        <amp-social-share type="twitter" width="32" height="32" data-param-url="https://ampbyexample.com/" data-param-text="Check out these AMP Examples!"></amp-social-share>
+        <amp-social-share type="gplus" width="32" height="32" data-param-url="https://ampbyexample.com/" data-param-text="Check out these AMP Examples!"></amp-social-share>
+        <amp-social-share type="whatsapp" width="32" height="32" data-param-url="https://ampbyexample.com/" data-param-text="Check out these AMP Examples!"></amp-social-share>
+      </div> -->
     </main>
+
+
+    <footer></footer>
   </body>
 </html>
