@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-fx-flying-carpet" src="https://cdn.ampproject.org/v0/amp-fx-flying-carpet-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <style amp-custom>
       *, *:before, *:after {
         box-sizing: border-box;
@@ -22,24 +26,29 @@
         box-shadow: 0 5px 5px rgba(0, 0, 0, .02);
         z-index: 105;
       }
-
       main {
-        margin-top: 20px;
+        margin-top: 24px;
       }
-
       section {
-        padding: 80px 0 40px;
+        padding: 32px 0;
       }
-
+      section:nth-child(1) {
+        padding-top: 72px;
+      }
       section:nth-child(2) {
         background-color: #FAFAFA;
       }
-
+      footer {
+        min-height: 200px;
+        background-color: #222;
+      }
+      .relative {
+        position: relative;
+      }
       .container {
         max-width: 90%;
         margin: 0 auto;
       }
-
       .sidebar {
         width: 280px;
         padding-left: 32px;
@@ -47,17 +56,14 @@
         padding-top: 16px;
         background: #FFF;
       }
-
       .navigation {
         padding: 0;
         margin: 0;
         list-style: none;
       }
-
       .navigation > li {
         display: block;     
       }
-
       .navigation > li > a {
         padding: 16px 0;
         display: block;
@@ -67,7 +73,6 @@
         font-size: 16px;
         color: #4A4A4A;
       }
-
       .menu {
         padding: 0;
         border: none;
@@ -77,36 +82,56 @@
         font-weight: 400;
         background-color: transparent;
       }
-
       .menu--close {
         font-size: 24px;
       }
-
       .recipe {
-        display: flex;
-        flex: 0 1 auto;
-        flex-direction: row;
-        flex-wrap: wrap;
         margin-right: -.5rem;
         margin-left: -.5rem;
       }
-
       .recipe__item {
-        flex-basis: 50%;
-        max-width: 50%;
-        padding-right: .5rem;
-        padding-left: .5rem;
+        margin: .5rem;
+        display: inline-block;
+        vertical-align: top;
+        width: calc(50% - 1rem);
       }
-
+      .recipe__item h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .recipe__item span {
+        font-style: italic;
+        color: #6A6A6A;
+      }
       .recipe__image {
         border-radius: 4px;
       }
-
       @media (min-width: 768px) {
         .recipe__item {
           flex-basis: 25%;
           max-width: 25%;
         }
+      }
+      .hero {
+        position: relative;
+      }
+      .hero__heading {
+        margin: 0;
+        line-height: 1.2;
+        font-size: 32px;
+        padding: .2rem 0;
+        color: #222;
+      }
+      .hero__heading span {
+        background-color: #FFE600;
+        box-shadow: 0.5rem 0 0 #FFE600, -0.5rem 0 0 #FFE600;
+      }
+      .hero__position {
+        z-index: 10;
+        padding: 1rem;
+        left: 0;
+        bottom: 0;
+        position: absolute;
       }
     </style>
   </head>
@@ -130,20 +155,82 @@
     <main>
       <section>
         <div class="container">
+          <div class="hero">
+            <amp-carousel type="slides" layout="responsive" width="300" height="300">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154850.jpg" width="300" height="300" layout="responsive"></amp-img>
+            </amp-carousel>
+
+            <div class="hero__position">
+              <h2 class="hero__heading"><span>Mother's Day Breakfast In Bed</span></h2>
+            </div>
+          </div>
+        </div>
+      </section>`
+
+      <section>
+        <div class="container">
           <h2>Top recipes</h2>
           
           <div class="recipe"> 
-            <amp-list width="auto" height="300" layout="fixed-height" src="./recipes.json">
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154850.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span>  
+            </div>
+            
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+
+            <div class="recipe__item">
+              <amp-img alt="A view of the sea" class="recipe__image" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/154693.jpg" width="300" height="300" layout="responsive"></amp-img>
+              <h3>6 Homemade Chinese Dinners</h3>
+              <span>by Gwenaelle Le Cochennec</span> 
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <amp-state id="recipes"src="https://tasty-cors.herokuapp.com/?size=2&from=0"></amp-state>
+
+      <section>
+        <div class="container">         
+          <div class="recipe"> 
+            <amp-list width="300" height="300" layout="responsive" src="https://tasty-cors.herokuapp.com/?size=10&from=0" [src]="recipes" [height]="100  * recipes.length">
               <template type="amp-mustache">
                 <div class="recipe__item">
-                  <amp-img alt="{{name}}" src="{{cover}}" width="300" height="300" layout="responsive"></amp-img>
+                  <amp-img alt="{{name}}" src="{{thumbnail_url}}" width="300" height="300" layout="responsive"></amp-img>
                   <h3>{{name}}</h3>
                 </div>
               </template>
-            </amp-list>
+            </amp-list>            
           </div>
         </div>
       </section>
     </main>
+
+
+    <footer></footer>
   </body>
 </html>
